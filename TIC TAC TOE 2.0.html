@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-image: linear-gradient(50deg,yellow,blue);
+            }
+            h1{
+                text-align: center; 
+                align-items: center;
+            }
+            td{
+                background-color: black;
+                height:50px;
+                width:50px;
+                border:none;
+                border-radius: 15px;
+                border-spacing: 10px;
+                padding-left: 35;
+            }
+
+            button{
+                background-color: black;
+                height:30px;
+                width:30;
+                border:none;
+                border-radius: 15px;
+                color:yellow;
+                font-weight:bold;
+                font-size: 30px;
+                cursor: pointer;
+            }
+
+            p{
+                background-color: red;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>TIC TAC TOE</h1>
+        <br><br><br><br>
+
+        
+        <table>
+            <tr>
+                <td><button id="(1,1)" onclick="play(id)"></button></td>
+                <td><button id="(1,2)" onclick="play(id)"></button></td>
+                <td><button id="(1,3)" onclick="play(id)"></button></td>
+            </tr>
+            <tr>
+                <td><button id="(2,1)" onclick="play(id)"></button></td>
+                <td><button id="(2,2)" onclick="play(id)"></button></td>
+                <td><button id="(2,3)" onclick="play(id)"></button></td>
+            </tr>
+            <tr>
+                <td><button id="(3,1)" onclick="play(id)"></button></td>
+                <td><button id="(3,2)" onclick="play(id)"></button></td>
+                <td><button id="(3,3)" onclick="play(id)"></button></td>
+            </tr>
+            <p id="winner"></p>
+            <br>
+            <a href="https://www.youtube.com/watch?v=YT6cguwIJTU" id="reward"></a>
+            <br><br>
+
+            <script>
+                let i,j,a='X',c=0,x=[],o=[];
+                let player1= prompt("Enter player 1 name");
+                let player2= prompt("Enter player 2 name");
+                function player(id)
+                {
+                    document.getElementById(id).textContent=a;
+                }
+
+                function xlayer(id)
+                {
+                    document.getElementById(id).textContent='O';
+                }
+
+                function play(id)
+                {
+                    let e=id;
+                    if(c%2===0)
+                    {
+                        a='X';
+                        player(id);
+                        c++;
+                        
+                        check_x(id);
+                    }
+                    else
+                    {
+                        a='O';
+                        player(id);
+                        c++;
+                       
+                        check_o(id);
+                    }
+
+                }
+                
+                function check_x(id)
+                {
+                    if(document.getElementById("(1,1)").innerHTML===document.getElementById("(1,2)").innerHTML && document.getElementById("(1,2)").innerHTML===document.getElementById("(1,3)").innerHTML && document.getElementById("(1,1)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+
+                        }
+
+                        else if(document.getElementById("(2,1)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(2,3)").innerHTML && document.getElementById("(2,1)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(3,1)").innerHTML===document.getElementById("(3,2)").innerHTML && document.getElementById("(3,2)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(3,1)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,1)").innerHTML===document.getElementById("(2,1)").innerHTML && document.getElementById("(2,1)").innerHTML===document.getElementById("(3,1)").innerHTML && document.getElementById("(1,1)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,2)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,2)").innerHTML && document.getElementById("(1,2)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,3)").innerHTML===document.getElementById("(2,3)").innerHTML && document.getElementById("(2,3)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(1,3)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,1)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(1,1)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,3)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,1)").innerHTML && document.getElementById("(1,3)").innerHTML==='X')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player1;
+                            alert('win!!',player1,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+                }
+
+                function check_o(id)
+                {
+                    if(document.getElementById("(1,1)").innerHTML===document.getElementById("(1,2)").innerHTML && document.getElementById("(1,2)").innerHTML===document.getElementById("(1,3)").innerHTML && document.getElementById("(1,1)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(2,1)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(2,3)").innerHTML && document.getElementById("(2,1)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(3,1)").innerHTML===document.getElementById("(3,2)").innerHTML && document.getElementById("(3,2)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(3,1)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,1)").innerHTML===document.getElementById("(2,1)").innerHTML && document.getElementById("(2,1)").innerHTML===document.getElementById("(3,1)").innerHTML && document.getElementById("(1,1)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,2)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,2)").innerHTML && document.getElementById("(1,2)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,3)").innerHTML===document.getElementById("(2,3)").innerHTML && document.getElementById("(2,3)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(1,3)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,1)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,3)").innerHTML && document.getElementById("(1,1)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+
+                        else if(document.getElementById("(1,3)").innerHTML===document.getElementById("(2,2)").innerHTML && document.getElementById("(2,2)").innerHTML===document.getElementById("(3,1)").innerHTML && document.getElementById("(1,3)").innerHTML==='O')
+                        {
+                            document.getElementById("winner").textContent="THE WINNER IS "+player2;
+                            alert('win!!',player2,' has won the game');
+                            document.getElementById("reward").textContent="EARN YOUR REWARD";
+                        }
+                }
+                
+                
+            </script>
+        </table>
+    </body>
+</html>
